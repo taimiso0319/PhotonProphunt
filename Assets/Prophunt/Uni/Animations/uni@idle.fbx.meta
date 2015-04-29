@@ -1,0 +1,159 @@
+fileFormatVersion: 2
+guid: e1110d7ab572486449e8c9357aaf35fa
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: a_space
+    100002: Eye_l
+    100004: Eye_r
+    100006: fastener_01
+    100008: fastener_02
+    100010: hip
+    100012: mouth
+    100014: neck
+    100016: pouch_c_b
+    100018: pouch_c_f
+    100020: pouch_l_b
+    100022: pouch_l_f
+    100024: pouch_r_b
+    100026: pouch_r_f
+    100028: root
+    100030: spine
+    100032: //RootNode
+    400000: a_space
+    400002: Eye_l
+    400004: Eye_r
+    400006: fastener_01
+    400008: fastener_02
+    400010: hip
+    400012: mouth
+    400014: neck
+    400016: pouch_c_b
+    400018: pouch_c_f
+    400020: pouch_l_b
+    400022: pouch_l_f
+    400024: pouch_r_b
+    400026: pouch_r_f
+    400028: root
+    400030: spine
+    400032: //RootNode
+    7400000: idle
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: idle
+      takeName: idle
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/hip
+        weight: 1
+      - path: root/hip/spine
+        weight: 1
+      - path: root/hip/spine/neck
+        weight: 1
+      - path: root/hip/spine/neck/a_space
+        weight: 1
+      - path: root/hip/spine/neck/Eye_l
+        weight: 1
+      - path: root/hip/spine/neck/Eye_r
+        weight: 1
+      - path: root/hip/spine/neck/fastener_01
+        weight: 1
+      - path: root/hip/spine/neck/fastener_01/fastener_02
+        weight: 1
+      - path: root/hip/spine/neck/mouth
+        weight: 1
+      - path: root/hip/spine/neck/pouch_c_b
+        weight: 1
+      - path: root/hip/spine/neck/pouch_c_f
+        weight: 1
+      - path: root/hip/spine/neck/pouch_l_b
+        weight: 1
+      - path: root/hip/spine/neck/pouch_l_f
+        weight: 1
+      - path: root/hip/spine/neck/pouch_r_b
+        weight: 1
+      - path: root/hip/spine/neck/pouch_r_f
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
