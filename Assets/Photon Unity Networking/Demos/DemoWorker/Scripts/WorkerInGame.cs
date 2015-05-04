@@ -78,12 +78,14 @@ public class WorkerInGame : Photon.MonoBehaviour
     }
 
     public void OnPhotonPlayerConnected(PhotonPlayer player)
-    {
+	{
+		teamManager.playerCount++;
         Debug.Log("OnPhotonPlayerConnected: " + player);
     }
 
     public void OnPhotonPlayerDisconnected(PhotonPlayer player)
     {
+		teamManager.playerCount--;
         Debug.Log("OnPlayerDisconneced: " + player);
     }
 
