@@ -5,7 +5,7 @@ public class CursorSetting : MonoBehaviour {
 	public bool isLobby = false;
 	public bool isCursorLocked = true;
 	void Start(){
-		if(!isLobby)CursorLock();
+		//if(!isLobby)CursorLock();
 	}
 
 	void Update(){
@@ -18,13 +18,13 @@ public class CursorSetting : MonoBehaviour {
 		}
 	}
 	
-	void CursorLock(){
+	public void CursorLock(){
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
 		isCursorLocked = true;
 	}
 	
-	void CursorUnLock(){
+	public void CursorUnLock(){
 		Cursor.lockState = CursorLockMode.Confined;
 		Cursor.visible = true;
 		isCursorLocked = false;

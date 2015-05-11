@@ -40,7 +40,7 @@ namespace Prophunt.SDUnitychan.ThirdPerson
 
             // get the third person character ( this should never be null due to require component )
             m_Character = GetComponent<ThirdPersonCharacter>();
-			cursorSetting = GameObject.Find("Scripts").GetComponent<CursorSetting>();
+			cursorSetting = GameObject.Find("Manager").GetComponent<CursorSetting>();
 			//rigBody = GetComponent<Rigidbody>();
         }
 		/*

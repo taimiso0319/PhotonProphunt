@@ -3,49 +3,52 @@ using System.Collections;
 
 public class TeamManager : Photon.MonoBehaviour {
 	// Use this for initialization
-	public int redCount;
-	public int blueCount;
-	public int playerCount;
 	public bool editTest = false;
+	public Transform playerPrefab;
+	public GameObject redSpawnPoint;
+	public GameObject blueSpawnPoint;
+	private GameObject playerChildObject;
+	private GameObject playerChildCameraRig;
+	public int countRedPlayer = 0;
+	public int countBluePlayer = 0;
 	Room room;
-	void Start () {
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	}
 
-	public void AddPlayer(GameObject playerObj){
-		int teamNum = 0;
-		room = PhotonNetwork.room;
-		playerCount = room.playerCount;
-		if(playerCount%2 == 0)teamNum = 0;
-		else if(playerCount%2 == 1)teamNum = 1;
-		playerObj.GetComponent<Prophunt.SDUnitychan.Status.PlayerStatusManager>().teamNum = teamNum;
-	}
-
-	public void RemovePlayer(GameObject playerObj){
-
-	}
-	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-	{
-		if(!editTest){
-			if (stream.isWriting)
-			{
-				// We own this player: send the others our data
-				//nameText.text = playerName;
-				stream.SendNext(playerCount);
-				stream.SendNext(redCount);
-				stream.SendNext(blueCount);
-			}
-			else
-			{
-				// Network player, receive data
-				this.playerCount = (int)stream.ReceiveNext();
-				this.redCount = (int)stream.ReceiveNext();
-				this.blueCount = (int)stream.ReceiveNext();
-				//nameText.text = playerName;
-			}
+	public void Update(){
+		int redCount = 0;
+		int blueCount = 0;
+		GameObject[] playerList = GameObject.FindGameObjectsWithTag("Player");
+		foreach(GameObject player in playerList){
+			Prophunt.SDUnitychan.Status.PlayerStatusManager statusManager = player.transform.FindChild("SDUnitychan").gameObject.GetComponent<Prophunt.SDUnitychan.Status.PlayerStatusManager>();
+			if(statusManager.teamNum == 0)redCount++;
+			else if(statusManager.teamNum == 1)blueCount++;
 		}
+		countRedPlayer = redCount;
+		countBluePlayer = blueCount;
+	}
+
+	public void InstantiatePlayer(int teamNum){
+		GameObject playerObj = PhotonNetwork.Instantiate(this.playerPrefab.name, transform.position, Quaternion.identity, 0) as GameObject;
+		playerChildObject = playerObj.transform.FindChild("SDUnitychan").gameObject;
+		playerChildCameraRig = playerObj.transform.FindChild("Cameras").transform.FindChild("FreeLookCameraRig").gameObject;
+		Prophunt.SDUnitychan.Status.PlayerStatusManager statusManager = playerChildObject.GetComponent<Prophunt.SDUnitychan.Status.PlayerStatusManager>();
+		statusManager.teamNum = teamNum;
+		if(redSpawnPoint != null && blueSpawnPoint != null && teamNum == 0){
+			playerChildObject.transform.position = redSpawnPoint.transform.position;
+			playerChildCameraRig.transform.position = playerChildObject.transform.position;
+			playerChildObject.transform.rotation = redSpawnPoint.transform.rotation;
+			playerChildCameraRig.transform.rotation = playerChildObject.transform.rotation;
+		}else if(redSpawnPoint != null && blueSpawnPoint != null && teamNum == 1){
+			playerChildObject.transform.position = blueSpawnPoint.transform.position;
+			playerChildCameraRig.transform.position = playerChildObject.transform.position;
+			playerChildObject.transform.rotation = blueSpawnPoint.transform.rotation;
+			playerChildCameraRig.transform.rotation = playerChildObject.transform.rotation;
+		}else{
+			Debug.Log("please set spawn points");
+		}
+	}
+
+	public void RandomJoin(){
+		int randNum = Random.Range(0,2);
+		InstantiatePlayer(randNum);
 	}
 }

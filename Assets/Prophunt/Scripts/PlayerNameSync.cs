@@ -12,11 +12,12 @@ public class PlayerNameSync : Photon.MonoBehaviour {
 	public Prophunt.SDUnitychan.Status.PlayerStatusManager playerStatusManager;
 
 	// Use this for initialization
+	void Awake (){
+	}
 	void Start () {
 		nameText = GetComponent<Text>();
 		namePlate = canvasObj.transform.FindChild("Panel").GetComponent<Image>();
 		nameText.text = null;
-		playerName = PhotonNetwork.player.name;
 	}
 
 	void LateUpdate(){
@@ -38,6 +39,7 @@ public class PlayerNameSync : Photon.MonoBehaviour {
 			{
 				// We own this player: send the others our data
 				//nameText.text = playerName;
+				playerName = PhotonNetwork.player.name;
 				stream.SendNext(playerName);
 			}
 			else

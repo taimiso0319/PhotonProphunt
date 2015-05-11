@@ -8,15 +8,9 @@ using UnityEngine;
 
 public class WorkerInGame : Photon.MonoBehaviour
 {
-    public Transform playerPrefab;
-	public TeamManager teamManager;
-	public GameObject redSpawnPoint;
-	public GameObject blueSpawnPoint;
-	private GameObject playerChildObject;
-	private GameObject playerChildCameraRig;
+
     public void Awake()
     {
-		if(teamManager==null)teamManager = GetComponent<TeamManager>();
         // in case we started this demo with the wrong scene being active, simply load the menu scene
         if (!PhotonNetwork.connected)
         {
@@ -24,22 +18,7 @@ public class WorkerInGame : Photon.MonoBehaviour
             return;
         }
         // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-		GameObject playerObj = PhotonNetwork.Instantiate(this.playerPrefab.name, transform.position, Quaternion.identity, 0) as GameObject;
-		playerChildObject = playerObj.transform.FindChild("SDUnitychan").gameObject;
-		playerChildCameraRig = playerObj.transform.FindChild("Cameras").transform.FindChild("FreeLookCameraRig").gameObject;
-		teamManager.AddPlayer(playerChildObject);
-		Prophunt.SDUnitychan.Status.PlayerStatusManager statusManager = playerChildObject.GetComponent<Prophunt.SDUnitychan.Status.PlayerStatusManager>();
-		if(redSpawnPoint != null && blueSpawnPoint != null && statusManager.teamNum == 0){
-			playerChildObject.transform.position = redSpawnPoint.transform.position;
-			playerChildCameraRig.transform.position = playerChildObject.transform.position;
-			playerChildObject.transform.rotation = redSpawnPoint.transform.rotation;
-		}else if(redSpawnPoint != null && blueSpawnPoint != null && statusManager.teamNum == 1){
-			playerChildObject.transform.position = blueSpawnPoint.transform.position;
-			playerChildCameraRig.transform.position = playerChildObject.transform.position;
-			playerChildObject.transform.rotation = blueSpawnPoint.transform.rotation;
-		}else{
-			Debug.Log("please set spawn points");
-		}
+
     }
 
     public void OnGUI()
@@ -97,13 +76,11 @@ public class WorkerInGame : Photon.MonoBehaviour
 
     public void OnPhotonPlayerConnected(PhotonPlayer player)
 	{
-		teamManager.playerCount++;
         Debug.Log("OnPhotonPlayerConnected: " + player);
     }
 
     public void OnPhotonPlayerDisconnected(PhotonPlayer player)
     {
-		teamManager.playerCount--;
         Debug.Log("OnPlayerDisconneced: " + player);
     }
 
