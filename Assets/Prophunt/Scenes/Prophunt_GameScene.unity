@@ -80,7 +80,6 @@ GameObject:
   - 4: {fileID: 13}
   - 114: {fileID: 27}
   - 114: {fileID: 29}
-  - 114: {fileID: 31}
   - 114: {fileID: 11}
   - 114: {fileID: 10}
   - 114: {fileID: 12}
@@ -155,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLobby: 0
   isCursorLocked: 1
+  chatInput: 0
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,7 +168,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChatWindowObject: {fileID: 1046250699}
   TeamSelectWindow: {fileID: 243019545}
-  inputField: {fileID: 0}
+  inputField: {fileID: 1833071920}
+  cursorSetting: {fileID: 11}
+  chatString: 
+  messages: []
 --- !u!4 &13
 Transform:
   m_ObjectHideFlags: 0
@@ -307,12 +310,12 @@ MonoBehaviour:
   group: 0
   prefixBackup: -1
   observed: {fileID: 0}
-  synchronization: 0
+  synchronization: 3
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
   ownershipTransfer: 0
   ObservedComponents:
-  - {fileID: 0}
+  - {fileID: 12}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 1
   instantiationId: 1
@@ -334,26 +337,6 @@ NavMeshSettings:
     cellSize: .166666657
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &31
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 7}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 043bd8ce63fde7c41a9ee103809fa981, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GuiRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 250
-    height: 300
-  IsVisible: 1
-  AlignBottom: 1
-  messages: []
 --- !u!1 &663224
 GameObject:
   m_ObjectHideFlags: 0
@@ -2165,7 +2148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1046250700
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3687,7 +3670,7 @@ MonoBehaviour:
     m_MaxSize: 100
     m_Alignment: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
@@ -3849,7 +3832,7 @@ MonoBehaviour:
   m_InputType: 0
   m_AsteriskChar: 42
   m_KeyboardType: 0
-  m_LineType: 0
+  m_LineType: 1
   m_HideMobileInput: 0
   m_CharacterValidation: 0
   m_CharacterLimit: 0
