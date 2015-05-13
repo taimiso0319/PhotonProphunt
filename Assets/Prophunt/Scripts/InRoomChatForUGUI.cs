@@ -21,9 +21,10 @@ public class InRoomChatForUGUI : Photon.MonoBehaviour {
 	[SerializeField]
 	private Scrollbar verticalScrollbar;
 
+	//private bool inputing = false;
+
 	public static readonly string ChatRPC = "Chat";
 	public List<string> messages = new List<string>();
-
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.Return) && !TeamSelectWindow.activeSelf){
@@ -32,6 +33,7 @@ public class InRoomChatForUGUI : Photon.MonoBehaviour {
 				inputField.ActivateInputField();
 				cursorSetting.ChatLock();
 			}else if(ChatWindowObject.activeSelf){
+				inputField.text = inputField.text.Replace(System.Environment.NewLine, "");
 				if(inputField.text != ""){
 					this.photonView.RPC("Chat", PhotonTargets.All, inputField.text);
 					inputField.text = "";
