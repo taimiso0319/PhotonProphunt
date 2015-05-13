@@ -21,12 +21,9 @@ public class WorkerInGame : Photon.MonoBehaviour
 
     }
 
-    public void OnGUI()
+    public void LeaveRoom()
     {
-        if (GUILayout.Button("Return to Lobby"))
-        {
-            PhotonNetwork.LeaveRoom();  // we will load the menu level when we successfully left the room
-        }
+        PhotonNetwork.LeaveRoom();  // we will load the menu level when we successfully left the room
     }
 
     public void OnMasterClientSwitched(PhotonPlayer player)

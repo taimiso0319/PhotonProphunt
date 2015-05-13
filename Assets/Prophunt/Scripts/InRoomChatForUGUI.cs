@@ -6,12 +6,20 @@ using System.Collections.Generic;
 [RequireComponent(typeof(PhotonView))]
 public class InRoomChatForUGUI : Photon.MonoBehaviour {
 
-	public GameObject ChatWindowObject;
-	public GameObject TeamSelectWindow;
-	public InputField inputField;
-	public CursorSetting cursorSetting;
-
-	public string chatString;
+	[SerializeField]
+	private GameObject ChatWindowObject;
+	[SerializeField]
+	private GameObject TeamSelectWindow;
+	[SerializeField]
+	private InputField inputField;
+	[SerializeField]
+	private CursorSetting cursorSetting;
+	[SerializeField]
+	private RectTransform chatPanelRect;
+	[SerializeField]
+	private Text chatText;
+	[SerializeField]
+	private Scrollbar verticalScrollbar;
 
 	public static readonly string ChatRPC = "Chat";
 	public List<string> messages = new List<string>();
@@ -27,12 +35,26 @@ public class InRoomChatForUGUI : Photon.MonoBehaviour {
 				if(inputField.text != ""){
 					this.photonView.RPC("Chat", PhotonTargets.All, inputField.text);
 					inputField.text = "";
+					inputField.ActivateInputField();
+				}else if(inputField.text == ""){
+					cursorSetting.ChatUnlock();
+					ChatWindowObject.SetActive(false);
 				}
-				cursorSetting.ChatUnlock();
-				ChatWindowObject.SetActive(false);
 			}
 		}
-		chatString = inputField.text;
+		if(Input.GetKeyDown(KeyCode.Escape)&&ChatWindowObject.activeSelf){
+			cursorSetting.ChatUnlock();
+			ChatWindowObject.SetActive(false);
+		}else if(Input.GetKeyDown(KeyCode.Escape)&&!ChatWindowObject.activeSelf){
+			ChatWindowObject.SetActive(true);
+			cursorSetting.ChatLock();
+		}
+		if(messages.Count != 0){
+			chatText.text = "";
+			for(int i = 0; i < messages.Count; i++){
+				chatText.text += messages[i] + System.Environment.NewLine;
+			}
+		}
 	}
 
 	[RPC]
@@ -53,6 +75,10 @@ public class InRoomChatForUGUI : Photon.MonoBehaviour {
 		}
 		
 		this.messages.Add(senderName +": " + newLine);
+		if(this.messages.Count >= 8){
+			chatPanelRect.offsetMax += new Vector2(0,24);
+			verticalScrollbar.value = 0;
+		}
 	}
 
 	public void AddLine(string newLine)

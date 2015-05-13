@@ -27,7 +27,7 @@ public class TeamManager : Photon.MonoBehaviour {
 	}
 
 	public void InstantiatePlayer(int teamNum){
-		GameObject playerObj = PhotonNetwork.Instantiate(this.playerPrefab.name, transform.position, Quaternion.identity, 0) as GameObject;
+		GameObject playerObj = PhotonNetwork.Instantiate(this.playerPrefab.name, transform.position, Quaternion.Euler(0,1,0), 0) as GameObject;
 		playerChildObject = playerObj.transform.FindChild("SDUnitychan").gameObject;
 		playerChildCameraRig = playerObj.transform.FindChild("Cameras").transform.FindChild("FreeLookCameraRig").gameObject;
 		Prophunt.SDUnitychan.Status.PlayerStatusManager statusManager = playerChildObject.GetComponent<Prophunt.SDUnitychan.Status.PlayerStatusManager>();
