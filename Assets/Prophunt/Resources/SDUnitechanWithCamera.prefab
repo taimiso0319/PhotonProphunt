@@ -1990,8 +1990,8 @@ GameObject:
   - 114: {fileID: 11417414}
   - 114: {fileID: 11459526}
   m_Layer: 10
-  m_Name: SDUnitychan
-  m_TagString: Untagged
+  m_Name: Character
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2365,7 +2365,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 161552}
   m_LocalRotation: {x: 0, y: .00872616004, z: 0, w: -.999961913}
-  m_LocalPosition: {x: -3.50053978, y: -4.3212213e-17, z: -1.94610476}
+  m_LocalPosition: {x: 5.09957218, y: 4.27910536e-16, z: 19.2713795}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 408320}
@@ -4563,7 +4563,7 @@ MonoBehaviour:
   sphereCastRadius: .00499999989
   visualiseInEditor: 1
   closestDistance: .5
-  dontClipTag: Player
+  dontClipTag: Character
 --- !u!114 &11418936
 MonoBehaviour:
   m_ObjectHideFlags: 1

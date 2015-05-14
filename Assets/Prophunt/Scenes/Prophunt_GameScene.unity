@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   editTest: 0
-  playerPrefab: {fileID: 402086, guid: 1bb41e41ca82e43c2a9f1f8f9f51f6f5, type: 2}
+  playerPrefab: {fileID: 498234, guid: 3843ee68ac954416cb3b5d88010aa525, type: 2}
   redSpawnPoint: {fileID: 497389195}
   blueSpawnPoint: {fileID: 1058667445}
   countRedPlayer: 0
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31d56c35722d75a4591577d224c275af, type: 3}
+  m_Script: {fileID: 11500000, guid: b6d754c8ce63f4cdda0388822aa98b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &29
@@ -1525,7 +1525,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: .784313738, b: .784313738, a: 1}
     m_HighlightedColor: {r: 1, g: .627451003, b: .627451003, a: 1}
     m_PressedColor: {r: .784313738, g: .725490212, b: .725490212, a: 1}
-    m_DisabledColor: {r: .691176474, g: .691176474, b: .691176474, a: 1}
+    m_DisabledColor: {r: .200000018, g: .31764707, b: .886274576, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: .100000001
   m_SpriteState:
@@ -4445,7 +4445,7 @@ MonoBehaviour:
     m_NormalColor: {r: .784313738, g: .784313738, b: 1, a: 1}
     m_HighlightedColor: {r: .627451003, g: .627451003, b: 1, a: 1}
     m_PressedColor: {r: .725490212, g: .725490212, b: .784313738, a: 1}
-    m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
+    m_DisabledColor: {r: .713725507, g: .713725507, b: .784313738, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: .100000001
   m_SpriteState:
@@ -5223,7 +5223,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 86742634}
   m_Direction: 2
   m_Value: 0
-  m_Size: .999999881
+  m_Size: .99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

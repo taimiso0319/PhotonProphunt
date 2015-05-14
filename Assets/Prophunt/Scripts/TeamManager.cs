@@ -18,7 +18,7 @@ public class TeamManager : Photon.MonoBehaviour {
 		int blueCount = 0;
 		GameObject[] playerList = GameObject.FindGameObjectsWithTag("Player");
 		foreach(GameObject player in playerList){
-			Prophunt.SDUnitychan.Status.PlayerStatusManager statusManager = player.transform.FindChild("SDUnitychan").gameObject.GetComponent<Prophunt.SDUnitychan.Status.PlayerStatusManager>();
+			Prophunt.SDUnitychan.Status.PlayerStatusManager statusManager = player.transform.FindChild("Character").gameObject.GetComponent<Prophunt.SDUnitychan.Status.PlayerStatusManager>();
 			if(statusManager.teamNum == 0)redCount++;
 			else if(statusManager.teamNum == 1)blueCount++;
 		}
@@ -28,7 +28,7 @@ public class TeamManager : Photon.MonoBehaviour {
 
 	public void InstantiatePlayer(int teamNum){
 		GameObject playerObj = PhotonNetwork.Instantiate(this.playerPrefab.name, transform.position, Quaternion.Euler(0,1,0), 0) as GameObject;
-		playerChildObject = playerObj.transform.FindChild("SDUnitychan").gameObject;
+		playerChildObject = playerObj.transform.FindChild("Character").gameObject;
 		playerChildCameraRig = playerObj.transform.FindChild("Cameras").transform.FindChild("FreeLookCameraRig").gameObject;
 		Prophunt.SDUnitychan.Status.PlayerStatusManager statusManager = playerChildObject.GetComponent<Prophunt.SDUnitychan.Status.PlayerStatusManager>();
 		statusManager.teamNum = teamNum;

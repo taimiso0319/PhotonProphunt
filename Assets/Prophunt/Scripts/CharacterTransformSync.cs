@@ -25,7 +25,7 @@ public class CharacterTransformSync : Photon.MonoBehaviour {
 				rootObject = this.gameObject;
 				Debug.Log("no charObject in script");
 			}
-			if(charObject==null)charObject = (GameObject)rootObject.transform.FindChild("SDUnitychan").gameObject;
+			if(charObject==null)charObject = (GameObject)rootObject.transform.FindChild("Character").gameObject;
 			if(camerasObject==null)camerasObject = rootObject.transform.FindChild("Cameras").gameObject;
 			charObjectAnim = (Animator)charObject.GetComponent<Animator>();
 			thirdpersonCharacter = charObject.GetComponent<Prophunt.SDUnitychan.ThirdPerson.ThirdPersonCharacter>();
