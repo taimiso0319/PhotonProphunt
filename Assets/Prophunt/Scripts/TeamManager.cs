@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class TeamManager : Photon.MonoBehaviour {
 	// Use this for initialization
 	public bool editTest = false;
-	public Transform playerPrefab;
+	public Transform[] playerPrefab;
 	public GameObject redSpawnPoint;
 	public GameObject blueSpawnPoint;
 	private GameObject playerChildObject;
@@ -12,6 +13,8 @@ public class TeamManager : Photon.MonoBehaviour {
 	public int countRedPlayer = 0;
 	public int countBluePlayer = 0;
 	Room room;
+	public int charNum = 0;
+	public Toggle[] toggleButton;
 
 	public void Update(){
 		int redCount = 0;
@@ -24,10 +27,13 @@ public class TeamManager : Photon.MonoBehaviour {
 		}
 		countRedPlayer = redCount;
 		countBluePlayer = blueCount;
+		for(int i = 0; i < toggleButton.Length; i++){
+			if(toggleButton[i].isOn)charNum = i;
+		}
 	}
 
 	public void InstantiatePlayer(int teamNum){
-		GameObject playerObj = PhotonNetwork.Instantiate(this.playerPrefab.name, transform.position, Quaternion.Euler(0,1,0), 0) as GameObject;
+		GameObject playerObj = PhotonNetwork.Instantiate(this.playerPrefab[charNum].name, transform.position, Quaternion.Euler(0,1,0), 0) as GameObject;
 		playerChildObject = playerObj.transform.FindChild("Character").gameObject;
 		playerChildCameraRig = playerObj.transform.FindChild("Cameras").transform.FindChild("FreeLookCameraRig").gameObject;
 		Prophunt.SDUnitychan.Status.PlayerStatusManager statusManager = playerChildObject.GetComponent<Prophunt.SDUnitychan.Status.PlayerStatusManager>();

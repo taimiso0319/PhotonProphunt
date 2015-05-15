@@ -1,7 +1,13 @@
 fileFormatVersion: 2
 guid: bb3a0a2d79e2e4ad2a23152d8f7a9e33
+timeCreated: 1431623766
+licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Query-Chan_license_logo_0
+    21300002: Query-Chan_license_logo_1
+    21300004: Query-Chan_license_logo_2
+    21300006: Query-Chan_license_logo_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -28,9 +34,9 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 1
   lightmap: 0
   rGBM: 0
@@ -40,13 +46,23 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 145, y: 145, z: 145, w: 145}
   spritePixelsToUnits: 100
   alphaIsTransparency: 0
-  textureType: -1
+  textureType: 0
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Query-Chan_license_logo_0
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 125
+        width: 750
+        height: 750
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 

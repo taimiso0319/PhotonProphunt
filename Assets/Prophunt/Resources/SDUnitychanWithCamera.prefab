@@ -1320,7 +1320,7 @@ GameObject:
   - 114: {fileID: 11468974}
   - 114: {fileID: 11446778}
   m_Layer: 10
-  m_Name: SDUnitechanWithCamera
+  m_Name: SDUnitychanWithCamera
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

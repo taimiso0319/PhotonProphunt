@@ -105,6 +105,8 @@ ModelImporter:
     7400048: 0058_Pose_Laydown
     7400050: 0059_Pose_Romance
     7400052: 0012_Fly_Right
+    7400054: Standing@loop
+    7400056: Jumping@loop
     9500000: //RootNode
     11100000: //RootNode
     13700000: body
