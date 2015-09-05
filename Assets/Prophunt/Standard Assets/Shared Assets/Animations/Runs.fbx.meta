@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b35bea543177b624b8e504a16956614d
+guid: e24f972a3513e487f8e51edc3ab2d76c
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
@@ -653,6 +653,12 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: "MuscleClip 'Runs' conversion warning: Bone length is
+      different in avatar and animation\n\n     'LeftLeg' : position error = 7.696520
+      mm\n\n     'LeftFoot' : position error = 15.233778 mm\n\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
     animationCompression: 0
     animationRotationError: .5
     animationPositionError: .5

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -59,7 +59,7 @@ public class InRoomChatForUGUI : Photon.MonoBehaviour {
 		}
 	}
 
-	[RPC]
+	[PunRPC]
 	public void Chat(string newLine, PhotonMessageInfo mi)
 	{
 		string senderName = "anonymous";

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b33e456ae548c4d4ca6c71bd1d2c203d
+guid: 7fd4961dff55e4b61bdcca6b0358266e
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
@@ -168,6 +168,12 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: "MuscleClip 'Jump_Land' conversion warning: Bone length
+      is different in avatar and animation\n\n     'LeftLeg' : position error = 7.696520
+      mm\n\n     'LeftFoot' : position error = 15.233778 mm\n\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5

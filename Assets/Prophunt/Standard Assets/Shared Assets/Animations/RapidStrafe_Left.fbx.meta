@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 08257633e3910e54a8cc5e8ed9cc9afe
+guid: 312011950142848e4b50a48abd35f67a
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
@@ -172,6 +172,12 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: "MuscleClip 'RapidStrafe_Left' conversion warning: Bone
+      length is different in avatar and animation\n\n     'LeftLeg' : position error
+      = 7.696520 mm\n\n     'LeftFoot' : position error = 15.233778 mm\n\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5

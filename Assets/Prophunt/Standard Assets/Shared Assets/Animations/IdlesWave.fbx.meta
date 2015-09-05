@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c387a0e47b4244f2b86c50372341024a
+guid: 16d02d1a4100d457c9574655dafa037a
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
@@ -637,6 +637,12 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: "MuscleClip 'IdlesWave' conversion warning: Bone length
+      is different in avatar and animation\n\n     'LeftLeg' : position error = 7.696520
+      mm\n\n     'LeftFoot' : position error = 15.233778 mm\n\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5

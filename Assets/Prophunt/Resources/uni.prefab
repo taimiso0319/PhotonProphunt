@@ -254,7 +254,6 @@ GameObject:
   - 54: {fileID: 5457082}
   - 114: {fileID: 11428044}
   - 114: {fileID: 11425010}
-  - 114: {fileID: 11456802}
   - 114: {fileID: 11401094}
   m_Layer: 10
   m_Name: uni
@@ -629,17 +628,6 @@ MonoBehaviour:
   viewIdField: 0
   instantiationId: -1
   isRuntimeInstantiated: 0
---- !u!114 &11456802
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 176950}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf25a39992eed406e97a2cd6c39f3288, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &13593708
 SphereCollider:
   m_ObjectHideFlags: 1
