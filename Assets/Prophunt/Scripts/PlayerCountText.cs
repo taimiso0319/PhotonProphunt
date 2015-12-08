@@ -3,7 +3,8 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerCountText : MonoBehaviour {
-
+	const int RED = 0;
+	const int BLUE = 1;
 	public GameObject managerObject;
 	public Button redJoinButton;
 	public Button blueJoinButton;
@@ -18,19 +19,19 @@ public class PlayerCountText : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		redCounterText.text = "Red Player: " + teamManager.countRedPlayer.ToString();
-		blueCounterText.text = "Blue Player: " + teamManager.countBluePlayer.ToString();
-		if(teamManager.countRedPlayer < teamManager.countBluePlayer){
+		redCounterText.text = "Red Player: " + teamManager.countPlayer[RED].ToString();
+		blueCounterText.text = "Blue Player: " + teamManager.countPlayer[BLUE].ToString();
+		if(teamManager.countPlayer[RED] < teamManager.countPlayer[BLUE]){
 			blueJoinButton.interactable = false;
 			redJoinButton.interactable = true;
 			randomJoinButton.interactable = false;
 		}
-		if(teamManager.countBluePlayer < teamManager.countRedPlayer){
+		if(teamManager.countPlayer[BLUE] < teamManager.countPlayer[RED]){
 			redJoinButton.interactable = false;
 			blueJoinButton.interactable = true;
 			randomJoinButton.interactable = false;
 		}
-		if(teamManager.countRedPlayer == teamManager.countBluePlayer){
+		if(teamManager.countPlayer[RED] == teamManager.countPlayer[BLUE]){
 			redJoinButton.interactable = true;
 			blueJoinButton.interactable = true;
 			randomJoinButton.interactable = true;
