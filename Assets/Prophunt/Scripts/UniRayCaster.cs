@@ -16,6 +16,8 @@ public class UniRayCaster : Photon.MonoBehaviour {
 	void FixedUpdate(){
 		if(countStart)timer += Time.deltaTime;
 		else limitTimer += Time.deltaTime;
-		if(timer > 3||limitTimer > 15) PhotonNetwork.Destroy(this.gameObject);
+		if(timer > 3||limitTimer > 15) {
+			if(photonView.isMine)PhotonNetwork.Destroy(this.gameObject);
+		}
 	}
 }

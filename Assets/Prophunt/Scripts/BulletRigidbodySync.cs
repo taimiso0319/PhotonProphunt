@@ -3,10 +3,10 @@ using System.Collections;
 
 public class BulletRigidbodySync : MonoBehaviour {
 
-	Rigidbody rigidBody;
+	public Rigidbody rigidBody;
 
 	void Start(){
-		rigidBody = GetComponent<Rigidbody>();
+		if(rigidBody == null)rigidBody = GetComponent<Rigidbody>();
 		PhotonNetwork.sendRate = 30;
 		PhotonNetwork.sendRateOnSerialize = 30;
 	}
